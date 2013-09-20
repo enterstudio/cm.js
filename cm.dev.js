@@ -1,4 +1,4 @@
-(function() {
+(function(exports) {
 	function tryParse(obj) {
 		try {
 			return JSON.parse(obj);
@@ -13,7 +13,7 @@
 		return JSON.stringify(obj);
 	}
 	
-	window.CM = {
+	var CM = {
 		set: function(name, value, expires, path, domain) {
 			var pair = escape(name) + '=' + escape(tryStringify(value));
 			
@@ -67,4 +67,14 @@
 			for(var key in obj) CM.unset(key);
 		}
 	};
-})();
+	
+	/* AMD support */
+	
+	if (typeof define === 'function' && define.amd) {
+	      define(function() {
+	           return CM;
+	       });
+	} else {
+	     exports.CM = CM;
+	}
+})(this);
