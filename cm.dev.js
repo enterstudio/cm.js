@@ -1,3 +1,16 @@
+/*
+ * CM.JS
+ * A microlibrary to help you manage cookies.
+ * http://cmjs.timseverien.nl
+ *
+ * Tim Severien
+ * http://timseverien.nl
+ *
+ * Copyright (c) 2013 Tim Severien
+ * Released under the GPLv2 license.
+ *
+ */
+
 (function() {
 	function tryParse(obj) {
 		try {
